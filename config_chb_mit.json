@@ -1,0 +1,16 @@
+{
+    "name":"CHB-MIT",
+    "format": "EDF",
+    "fs": "Data Sampling Rate",
+    "channels": "Channel ",
+    "nmontages": "Channels changed",
+    "file_name": "File Name",
+    "nseizures": "Number of Seizures",
+    "start_seizure": "Seizure(\\s\\d+)?\\sStart Time:",
+    "end_seizure": "Seizure(\\s\\d+)?\\sEnd Time:",
+    "time_format": "s",
+    "tiempo_acumulado": false,
+    "file_start": "File Start Time",
+    "file_end": "File End Time"
+}
+

@@ -1,0 +1,15 @@
+{
+    "name":"siena_scalp",
+    "format": "EDF",
+    "fs": "Data Sampling Rate",
+    "channels": "Channel ",
+    "nmontages": null,
+    "file_name": "File name",
+    "nseizures": null,
+    "start_seizure": "Seizure start time:",
+    "end_seizure": "Seizure end time:",
+    "time_format": "hh.mm.ss",
+    "tiempo_acumulado": true,
+    "file_start": "Registration start time",
+    "file_end": "Registration end time"
+}

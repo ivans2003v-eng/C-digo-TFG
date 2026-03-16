@@ -1,0 +1,12 @@
+{
+    "database_directory": "D:/SONIA/Datos TFG Sonia/chb-mit-scalp-eeg-database-1.0.0/chb-mit-scalp-eeg-database-1.0.0",
+    "selected_patients": [
+        "chb01"
+    ],
+    "filters": {
+        "Filtro paso bajo": true,
+        "Filtro paso alto": true,
+        "Filtro notch": true
+    },
+    "window_duration": 8
+}

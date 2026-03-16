@@ -1,0 +1,11 @@
+{
+    "name":"swec-thz",
+    "format": "MAT",
+    "fs": "fs",
+    "start_seizure": "seizure_begin",
+    "end_seizure": "seizure_end",
+    "channels": [],
+    "data": "EEG",
+    "result_directory": null,
+    "bbdd_directory": null
+}
