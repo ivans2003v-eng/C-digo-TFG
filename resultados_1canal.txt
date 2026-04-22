@@ -1,0 +1,44 @@
+1 canal
+==================================================
+RESUMEN FINAL
+==================================================
+
+Paciente 1 (chb01):
+  Accuracy:              0.999
+  F1-score:              0.970
+  Sensitivity:           1.000
+  Detection rate:        1.000
+  Avg detection delay:   0.00 s
+  False alarms/hour:     0.48
+
+Paciente 2 (chb02):
+  Accuracy:              0.720
+  F1-score:              0.508
+  Sensitivity:           0.765
+  Detection rate:        1.000
+  Avg detection delay:   20.00 s
+  False alarms/hour:     194.89
+
+Paciente 3 (chb03):
+  Accuracy:              0.988
+  F1-score:              0.831
+  Sensitivity:           0.976
+  Detection rate:        1.000
+  Avg detection delay:   0.71 s
+  False alarms/hour:     8.03
+
+Paciente 4 (chb04):
+  Accuracy:              0.887
+  F1-score:              0.040
+  Sensitivity:           0.208
+  Detection rate:        0.333
+  Avg detection delay:   50.00 s
+  False alarms/hour:     73.97
+
+Paciente 5 (chb05):
+  Accuracy:              0.988
+  F1-score:              0.927
+  Sensitivity:           0.984
+  Detection rate:        1.000
+  Avg detection delay:   2.00 s
+  False alarms/hour:     8.14

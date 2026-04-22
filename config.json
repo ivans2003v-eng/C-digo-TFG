@@ -11,7 +11,7 @@
     "tiempo_acumulado": false,
     "file_start": "File Start Time",
     "file_end": "File End Time",
-    "result_directory": "C:/tfg/resultados/chb_original",
+    "result_directory": "C:/Users/ivan/Desktop/datos_sobre_TFG/senales_pacientes",
     "bbdd_directory": "C:/tfg/datos/chb-mit-scalp-eeg-database-1.0.0",
     "name": "CHB-MIT"
 }

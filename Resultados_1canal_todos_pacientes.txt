@@ -1,0 +1,189 @@
+==================================================
+RESUMEN FINAL
+==================================================
+
+Paciente 1 (chb01):
+  Accuracy:              0.999
+  F1-score:              0.970
+  Sensitivity:           1.000
+  Detection rate:        1.000
+  Avg detection delay:   0.00 s
+  False alarms/hour:     0.48
+
+Paciente 2 (chb02):
+  Accuracy:              0.587
+  F1-score:              0.419
+  Sensitivity:           0.735
+  Detection rate:        1.000
+  Avg detection delay:   22.50 s
+  False alarms/hour:     289.73
+
+Paciente 3 (chb03):
+  Accuracy:              0.991
+  F1-score:              0.849
+  Sensitivity:           0.965
+  Detection rate:        1.000
+  Avg detection delay:   0.71 s
+  False alarms/hour:     5.91
+
+Paciente 4 (chb04):
+  Accuracy:              0.948
+  F1-score:              0.051
+  Sensitivity:           0.097
+  Detection rate:        0.333
+  Avg detection delay:   100.00 s
+  False alarms/hour:     27.52
+
+Paciente 5 (chb05):
+  Accuracy:              0.987
+  F1-score:              0.923
+  Sensitivity:           0.984
+  Detection rate:        1.000
+  Avg detection delay:   2.00 s
+  False alarms/hour:     8.80
+
+Paciente 6 (chb06):
+  Accuracy:              0.832
+  F1-score:              0.559
+  Sensitivity:           1.000
+  Detection rate:        1.000
+  Avg detection delay:   0.00 s
+  False alarms/hour:     120.94
+
+Paciente 7 (chb07):
+  Accuracy:              0.997
+  F1-score:              0.912
+  Sensitivity:           0.894
+  Detection rate:        1.000
+  Avg detection delay:   3.33 s
+  False alarms/hour:     0.93
+
+Paciente 8 (chb08):
+  Accuracy:              0.965
+  F1-score:              0.817
+  Sensitivity:           0.877
+  Detection rate:        1.000
+  Avg detection delay:   7.00 s
+  False alarms/hour:     16.39
+
+Paciente 9 (chb09):
+  Accuracy:              0.988
+  F1-score:              0.760
+  Sensitivity:           0.974
+  Detection rate:        1.000
+  Avg detection delay:   1.67 s
+  False alarms/hour:     8.20
+
+Paciente 10 (chb10):
+  Accuracy:              1.000
+  F1-score:              1.000
+  Sensitivity:           1.000
+  Detection rate:        1.000
+  Avg detection delay:   0.00 s
+  False alarms/hour:     0.00
+
+Paciente 11 (chb11):
+  Accuracy:              0.940
+  F1-score:              0.603
+  Sensitivity:           0.890
+  Detection rate:        1.000
+  Avg detection delay:   6.67 s
+  False alarms/hour:     8.89
+
+Paciente 12 (chb12):
+  Accuracy:              0.970
+  F1-score:              0.841
+  Sensitivity:           0.903
+  Detection rate:        1.000
+  Avg detection delay:   1.38 s
+  False alarms/hour:     18.63
+
+Paciente 13 (chb13):
+  Accuracy:              0.921
+  F1-score:              0.313
+  Sensitivity:           0.858
+  Detection rate:        1.000
+  Avg detection delay:   0.62 s
+  False alarms/hour:     53.72
+
+Paciente 14 (chb14):
+  Accuracy:              0.968
+  F1-score:              0.291
+  Sensitivity:           0.771
+  Detection rate:        0.800
+  Avg detection delay:   0.00 s
+  False alarms/hour:     21.72
+
+Paciente 15 (chb15):
+  Accuracy:              0.932
+  F1-score:              0.713
+  Sensitivity:           0.936
+  Detection rate:        1.000
+  Avg detection delay:   3.48 s
+  False alarms/hour:     43.08
+
+Paciente 16 (chb17):
+  Accuracy:              0.967
+  F1-score:              0.688
+  Sensitivity:           0.789
+  Detection rate:        1.000
+  Avg detection delay:   16.67 s
+  False alarms/hour:     16.87
+
+Paciente 17 (chb18):
+  Accuracy:              0.962
+  F1-score:              0.378
+  Sensitivity:           0.595
+  Detection rate:        0.667
+  Avg detection delay:   3.75 s
+  False alarms/hour:     21.22
+
+Paciente 18 (chb19):
+  Accuracy:              0.982
+  F1-score:              0.810
+  Sensitivity:           0.980
+  Detection rate:        1.000
+  Avg detection delay:   0.00 s
+  False alarms/hour:     12.32
+
+Paciente 19 (chb20):
+  Accuracy:              0.994
+  F1-score:              0.731
+  Sensitivity:           0.821
+  Detection rate:        1.000
+  Avg detection delay:   0.00 s
+  False alarms/hour:     4.30
+
+Paciente 20 (chb21):
+  Accuracy:              0.953
+  F1-score:              0.435
+  Sensitivity:           0.630
+  Detection rate:        0.667
+  Avg detection delay:   2.50 s
+  False alarms/hour:     26.97
+
+Paciente 21 (chb22):
+  Accuracy:              0.995
+  F1-score:              0.931
+  Sensitivity:           0.978
+  Detection rate:        1.000
+  Avg detection delay:   1.67 s
+  False alarms/hour:     2.75
+
+Paciente 22 (chb23):
+  Accuracy:              0.989
+  F1-score:              0.726
+  Sensitivity:           0.915
+  Detection rate:        1.000
+  Avg detection delay:   1.67 s
+  False alarms/hour:     6.32
+
+Paciente 23 (chb24):
+  Accuracy:              0.996
+  F1-score:              0.809
+  Sensitivity:           0.851
+  Detection rate:        1.000
+  Avg detection delay:   5.00 s
+  False alarms/hour:     1.26
+
+    

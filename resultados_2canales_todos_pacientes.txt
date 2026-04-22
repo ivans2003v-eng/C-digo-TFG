@@ -1,0 +1,189 @@
+================================================================================
+RESUMEN FINAL DE RESULTADOS POR PACIENTE
+================================================================================
+
+chb01:
+  accuracy...................... 0.9984
+  f1_score...................... 0.9370
+  sensitivity................... 0.9592
+  detection_rate................ 1.0000
+  avg_detection_delay........... 0.0000
+  false_alarms_per_hour......... 0.4447
+
+chb02:
+  accuracy...................... 0.6197
+  f1_score...................... 0.4942
+  sensitivity................... 0.8529
+  detection_rate................ 1.0000
+  avg_detection_delay........... 8.0000
+  false_alarms_per_hour......... 168.5788
+
+chb03:
+  accuracy...................... 0.9741
+  f1_score...................... 0.6972
+  sensitivity................... 0.9347
+  detection_rate................ 1.0000
+  avg_detection_delay........... 1.1429
+  false_alarms_per_hour......... 10.7788
+
+chb04:
+  accuracy...................... 0.9276
+  f1_score...................... 0.1443
+  sensitivity................... 0.5208
+  detection_rate................ 0.6667
+  avg_detection_delay........... 8.0000
+  false_alarms_per_hour......... 29.7001
+
+chb05:
+  accuracy...................... 0.9905
+  f1_score...................... 0.9343
+  sensitivity................... 0.9676
+  detection_rate................ 1.0000
+  avg_detection_delay........... 6.4000
+  false_alarms_per_hour......... 3.4615
+
+chb06:
+  accuracy...................... 0.8595
+  f1_score...................... 0.6705
+  sensitivity................... 1.0000
+  detection_rate................ 1.0000
+  avg_detection_delay........... 0.0000
+  false_alarms_per_hour......... 63.2110
+
+chb07:
+  accuracy...................... 0.9963
+  f1_score...................... 0.9179
+  sensitivity................... 0.9497
+  detection_rate................ 1.0000
+  avg_detection_delay........... 8.0000
+  false_alarms_per_hour......... 0.9147
+
+chb08:
+  accuracy...................... 0.9613
+  f1_score...................... 0.7996
+  sensitivity................... 0.8926
+  detection_rate................ 1.0000
+  avg_detection_delay........... 12.8000
+  false_alarms_per_hour......... 12.8220
+
+chb09:
+  accuracy...................... 0.9923
+  f1_score...................... 0.7860
+  sensitivity................... 0.9632
+  detection_rate................ 1.0000
+  avg_detection_delay........... 2.6667
+  false_alarms_per_hour......... 3.2755
+
+chb10:
+  accuracy...................... 0.9953
+  f1_score...................... 0.9247
+  sensitivity................... 0.9898
+  detection_rate................ 1.0000
+  avg_detection_delay........... 1.1429
+  false_alarms_per_hour......... 2.0270
+
+chb11:
+  accuracy...................... 0.9559
+  f1_score...................... 0.5522
+  sensitivity................... 0.9495
+  detection_rate................ 1.0000
+  avg_detection_delay........... 13.3333
+  false_alarms_per_hour......... 10.0735
+
+chb12:
+  accuracy...................... 0.9504
+  f1_score...................... 0.6496
+  sensitivity................... 0.8333
+  detection_rate................ 1.0000
+  avg_detection_delay........... 3.0000
+  false_alarms_per_hour......... 18.0723
+
+chb13:
+  accuracy...................... 0.9332
+  f1_score...................... 0.3849
+  sensitivity................... 0.7054
+  detection_rate................ 0.8750
+  avg_detection_delay........... 0.0000
+  false_alarms_per_hour......... 25.7969
+
+chb14:
+  accuracy...................... 0.9647
+  f1_score...................... 0.3160
+  sensitivity................... 0.7714
+  detection_rate................ 0.8000
+  avg_detection_delay........... 0.0000
+  false_alarms_per_hour......... 15.2612
+
+chb15:
+  accuracy...................... 0.9747
+  f1_score...................... 0.8347
+  sensitivity................... 0.9089
+  detection_rate................ 1.0000
+  avg_detection_delay........... 4.0000
+  false_alarms_per_hour......... 8.7753
+
+chb17:
+  accuracy...................... 0.9275
+  f1_score...................... 0.4879
+  sensitivity................... 0.6168
+  detection_rate................ 1.0000
+  avg_detection_delay........... 64.0000
+  false_alarms_per_hour......... 24.4599
+
+chb18:
+  accuracy...................... 0.9207
+  f1_score...................... 0.3242
+  sensitivity................... 0.6310
+  detection_rate................ 0.6667
+  avg_detection_delay........... 4.0000
+  false_alarms_per_hour......... 32.6471
+
+chb19:
+  accuracy...................... 0.9820
+  f1_score...................... 0.8033
+  sensitivity................... 0.9608
+  detection_rate................ 1.0000
+  avg_detection_delay........... 0.0000
+  false_alarms_per_hour......... 7.3640
+
+chb20:
+  accuracy...................... 0.9876
+  f1_score...................... 0.6514
+  sensitivity................... 0.8214
+  detection_rate................ 1.0000
+  avg_detection_delay........... 0.0000
+  false_alarms_per_hour......... 5.4246
+
+chb21:
+  accuracy...................... 0.9534
+  f1_score...................... 0.4523
+  sensitivity................... 0.6667
+  detection_rate................ 0.6667
+  avg_detection_delay........... 0.0000
+  false_alarms_per_hour......... 17.1998
+
+chb22:
+  accuracy...................... 0.9908
+  f1_score...................... 0.8685
+  sensitivity................... 0.9556
+  detection_rate................ 1.0000
+  avg_detection_delay........... 5.3333
+  false_alarms_per_hour......... 3.4396
+
+chb23:
+  accuracy...................... 0.9901
+  f1_score...................... 0.7504
+  sensitivity................... 0.9504
+  detection_rate................ 1.0000
+  avg_detection_delay........... 1.7778
+  false_alarms_per_hour......... 3.8605
+
+chb24:
+  accuracy...................... 0.9878
+  f1_score...................... 0.6857
+  sensitivity................... 0.8333
+  detection_rate................ 1.0000
+  avg_detection_delay........... 8.0000
+  false_alarms_per_hour......... 4.3108
+
+================================================================================

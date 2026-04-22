@@ -13,9 +13,17 @@ from tensorflow.keras.models import Sequential, load_model
 from tensorflow.keras.layers import LSTM, Dense, Dropout
 from feature_extraction import *
 from load_data import EDFReader, MATReader
-from detection_models import get_expression, non_seizure_files_division, create_sequences, split_train_test, get_false_detection_dftest
+from detection_models import get_expression, non_seizure_files_division, create_sequences, split_train_test, get_false_detection_dftest, merge_channels
 from select_channel import get_best_channels, calculate_entropy, save_channel_rankings
 from evaluation import *
+import random
+import tensorflow as tf
+
+# FIJAR SEMILLAS PARA REPRODUCIBILIDAD
+SEED = 42
+random.seed(SEED)
+np.random.seed(SEED)
+tf.random.set_seed(SEED)
 
 # CARGAR LA CONFIGURACIÓN DE LA BASE DE DATOS
 with open('config.json', 'r', encoding='utf-8') as archivo:
@@ -302,7 +310,8 @@ respuesta_eval = input("¿Quiere evaluar el modelo? (s/n): ").strip().lower()
 print("Espere un momento...\n")
 
 # DIVIDIR EN TRAIN Y TEST 
-nchannels = 1
+nchannels = 3
+all_patient_results = {}  # Diccionario para acumular resultados de todos los pacientes
 
 for i, patient in enumerate(patients):
 
@@ -322,7 +331,10 @@ for i, patient in enumerate(patients):
 
     # Extract only the best channels
     df = eval(get_expression(best_channels, 'channel')) 
-    df = df.drop(['channel'], axis=1)
+    if nchannels > 1:
+        df = merge_channels(df, best_channels)
+    else:
+        df = df.drop(['channel'], axis=1)
 
     patient_path = config_execution['database_directory'] + '\\' + patient
 
@@ -401,8 +413,15 @@ for i, patient in enumerate(patients):
         if respuesta_eval in ["si", "sí", "s", "yes"]:
 
             # Evaluar
-            y_pred = (model.predict(X_test) > 0.5).astype(int).flatten()
-            metrics = get_lstm_metrics(y_test, y_pred, timeW=5)
+            y_prob = model.predict(X_test).flatten()
+
+            # Suavizado por media móvil sobre las probabilidades
+            # Reduce falsas alarmas aisladas sin destruir detecciones reales
+            smooth_window = 5
+            y_prob_smooth = np.convolve(y_prob, np.ones(smooth_window)/smooth_window, mode='same')
+            y_pred = (y_prob_smooth > 0.5).astype(int)
+
+            metrics = get_lstm_metrics(y_test, y_pred, timeW=timeW)
             sensitivity = recall_score(y_test, y_pred, zero_division=0)
 
             results.append({'test_file': seizure_file, 
@@ -448,6 +467,29 @@ for i, patient in enumerate(patients):
             json.dump(results_json, f, indent=4)
 
         print(f"\nResultados guardados en: {file_path}")
+
+        # Acumular resultados para el resumen final
+        all_patient_results[patient] = results_df
+
+# === RESUMEN FINAL DE TODOS LOS PACIENTES ===
+if all_patient_results:
+    # Media global (valores de la primera gráfica)
+    all_dfs = pd.concat(all_patient_results.values(), ignore_index=True)
+    print("\n" + "=" * 80)
+    print("MÉTRICAS PROMEDIO GLOBALES")
+    print("=" * 80)
+    for metric in ['accuracy', 'f1_score', 'sensitivity', 'detection_rate', 'avg_detection_delay', 'false_alarms_per_hour']:
+        print(f"  {metric:.<30} {all_dfs[metric].mean():.4f}")
+
+    print("\n" + "=" * 80)
+    print("RESUMEN FINAL DE RESULTADOS POR PACIENTE")
+    print("=" * 80)
+    for patient, res_df in all_patient_results.items():
+        print(f"\n{patient}:")
+        avg = res_df[['accuracy', 'f1_score', 'sensitivity', 'detection_rate', 'avg_detection_delay', 'false_alarms_per_hour']].mean()
+        for metric_name, value in avg.items():
+            print(f"  {metric_name:.<30} {value:.4f}")
+    print("\n" + "=" * 80)
 
 #########################################################################################################
 
@@ -513,47 +555,7 @@ if respuesta in ["si", "sí", "s", "yes"]:
         plt.tight_layout()
         plt.show()
 
-    ###########################################################################33
-
-    # GRÁFICO DE ACCURACY, F1-SCORE, SENSITIVITY POR PACIENTE
-    # Diccionario: { paciente: {metric1: valor, metric2: valor, ...} }
-    data_by_patient = {}
-
-    # Cargar todos los archivos JSON
-    for filename in os.listdir(results_folder):
-        if filename.endswith('_results.json'):
-            filepath = os.path.join(results_folder, filename)
-            with open(filepath, 'r') as f:
-                content = json.load(f)
-                patient = content['patient']
-                results = content['results']
-                if results:
-                    # Calcula el promedio de cada métrica
-                    avg_metrics = {}
-                    for metric in metrics:
-                        values = [r[metric] for r in results if metric in r]
-                        avg_metrics[metric] = sum(values) / len(values) if values else 0
-                    data_by_patient[patient] = avg_metrics
-
-    # Verifica si se encontraron pacientes
-    if not data_by_patient:
-        print("No se encontraron datos de pacientes.")
-    else:
-        patients = list(data_by_patient.keys())
-
-        for metric in metrics:
-            values = [data_by_patient[p][metric] for p in patients]
-
-            plt.figure(figsize=(12, 5))
-            plt.bar(patients, values, color='skyblue')
-            plt.xticks(rotation=45, ha='right')
-            plt.ylabel(metric.replace('_', ' ').title())
-            plt.title(f'{metric.replace("_", " ").title()} por paciente')
-            plt.grid(axis='y', linestyle='--', alpha=0.5)
-            plt.tight_layout()
-            plt.show()
-
-    #####################################################################
+    ###########################################################################
 
     # GRÁFICO DE CONJUNTO DE MÉTRICAS POR PACIENTE
     metrics = ['accuracy', 'f1_score', 'sensitivity']

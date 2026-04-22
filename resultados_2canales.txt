@@ -1,0 +1,44 @@
+2 canales
+================================================================================
+RESUMEN FINAL DE RESULTADOS POR PACIENTE
+================================================================================
+
+chb01:
+  accuracy...................... 0.9987
+  f1_score...................... 0.9498
+  sensitivity................... 0.9796
+  detection_rate................ 1.0000
+  avg_detection_delay........... 0.0000
+  false_alarms_per_hour......... 0.4447
+
+chb02:
+  accuracy...................... 0.6070
+  f1_score...................... 0.4566
+  sensitivity................... 0.7059
+  detection_rate................ 1.0000
+  avg_detection_delay........... 16.0000
+  false_alarms_per_hour......... 171.7180
+
+chb03:
+  accuracy...................... 0.9656
+  f1_score...................... 0.6715
+  sensitivity................... 0.9653
+  detection_rate................ 1.0000
+  avg_detection_delay........... 1.1429
+  false_alarms_per_hour......... 15.0449
+
+chb04:
+  accuracy...................... 0.9645
+  f1_score...................... 0.2768
+  sensitivity................... 0.5833
+  detection_rate................ 0.6667
+  avg_detection_delay........... 20.0000
+  false_alarms_per_hour......... 14.3317
+
+chb05:
+  accuracy...................... 0.9878
+  f1_score...................... 0.9285
+  sensitivity................... 0.9905
+  detection_rate................ 1.0000
+  avg_detection_delay........... 1.6000
+  false_alarms_per_hour......... 5.2941

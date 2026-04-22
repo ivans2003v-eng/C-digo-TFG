@@ -181,5 +181,46 @@ def evaluate_false_detections(y_true, y_pred, timeW):
     false_detections = [(total_test_time, sum(new_y_pred))]
 
     return false_detections
-    
-    
+
+
+def merge_channels(df, best_channels):
+    """
+    Fusiona las características de múltiples canales en una sola fila por ventana temporal.
+    Para cada registro y ventana, concatena horizontalmente las características de cada canal,
+    añadiendo un sufijo (_ch0, _ch1, etc.) para distinguirlos.
+
+    Parámetros de entrada:
+     - df : pd.DataFrame. DataFrame con las características de los canales seleccionados.
+       Debe contener columnas 'channel', 'register' y 'seizure' además de las características.
+     - best_channels : list. Lista ordenada con los nombres de los canales seleccionados.
+
+    Salida:
+     - pd.DataFrame. DataFrame donde cada fila contiene las características de todos los canales
+       concatenadas horizontalmente para una misma ventana temporal, con columnas 'seizure' y 'register'.
+    """
+    feature_cols = [c for c in df.columns if c not in ['channel', 'register', 'seizure']]
+
+    merged_dfs = []
+    for register in df['register'].unique():
+        reg_df = df[df['register'] == register]
+
+        channel_dfs = []
+        for i, ch in enumerate(best_channels):
+            ch_df = reg_df[reg_df['channel'] == ch][feature_cols].reset_index(drop=True)
+            ch_df = ch_df.add_suffix(f'_ch{i}')
+            channel_dfs.append(ch_df)
+
+        # Obtener etiquetas de seizure (iguales para ambos canales en la misma ventana)
+        seizure = reg_df[reg_df['channel'] == best_channels[0]]['seizure'].reset_index(drop=True)
+        register_series = pd.Series([register] * len(seizure), name='register')
+
+        # Alinear longitudes (por si los canales tienen ligeras diferencias en número de ventanas)
+        min_len = min(len(cdf) for cdf in channel_dfs)
+        channel_dfs = [cdf.iloc[:min_len] for cdf in channel_dfs]
+        seizure = seizure.iloc[:min_len]
+        register_series = register_series.iloc[:min_len]
+
+        merged = pd.concat(channel_dfs + [seizure, register_series], axis=1)
+        merged_dfs.append(merged)
+
+    return pd.concat(merged_dfs, ignore_index=True)
